@@ -1,5 +1,5 @@
 {
-  "name": "tauri-app",
+  "name": "capture-card-viewer",
   "version": "1.0.0",
   "private": true,
   "scripts": {

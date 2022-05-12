@@ -1,17 +1,12 @@
 <script>
-  // import { window } from "@tauri-apps/api";
-
   import { onMount } from "svelte";
 
-  let audioButtonText = "Audio";
   let videoValue = "null";
   let audioValue = "null";
 
   let videoElement;
   let audioElement;
   let aspectRatioSelect;
-  let videoSelectBtn;
-  let audioSelectBtn;
 
   let videoDevices = [];
   let audioDevices = [];
@@ -19,10 +14,7 @@
   onMount(async () => {
     videoElement = document.querySelector("video");
     audioElement = document.querySelector("audio");
-
     aspectRatioSelect = document.getElementById("aspectRatioSelect");
-    videoSelectBtn = document.getElementById("videoSourceSelect");
-    audioSelectBtn = document.getElementById("audioSourceSelect");
 
     getSources();
   });
@@ -193,9 +185,6 @@
       position: relative;
       top: -100px;
       background-color: #fff0;
-    }
-
-    .error-section {
     }
   }
 </style>
