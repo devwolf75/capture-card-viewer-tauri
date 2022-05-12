@@ -1,11 +1,11 @@
 [package]
-name = "app"
-version = "0.1.0"
-description = "A Tauri App"
+name = "capture-card-viewer"
+version = "1.0.0"
+description = "An application to view your capture card video without having to use heavy apps like OBS."
 authors = ["you"]
 license = ""
 repository = ""
-default-run = "app"
+default-run = "capture-card-viewer"
 edition = "2021"
 rust-version = "1.57"
 
