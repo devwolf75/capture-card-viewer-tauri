@@ -1,27 +1,34 @@
 {
-  "$schema": "..\\node_modules/@tauri-apps/cli\\schema.json",
   "build": {
-    "beforeBuildCommand": "yarn build",
-    "beforeDevCommand": "yarn dev",
-    "devPath": "http://localhost:8080",
-    "distDir": "../public"
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
   },
   "package": {
     "productName": "capture-card-viewer",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "tauri": {
     "allowlist": {
       "all": true
     },
+    "windows": [
+      {
+        "title": "Capture Card Viewer",
+        "width": 800,
+        "height": 600,
+        "maximized": true,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    },
     "bundle": {
       "active": true,
-      "category": "DeveloperTool",
-      "copyright": "",
-      "deb": {
-        "depends": []
-      },
-      "externalBin": [],
+      "targets": "all",
+      "identifier": "com.devwolf75.capturecardviewer",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -29,38 +36,12 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.dagonar.capturecardviewer",
-      "longDescription": "",
-      "macOS": {
-        "entitlements": null,
-        "exceptionDomain": "",
-        "frameworks": [],
-        "providerShortName": null,
-        "signingIdentity": null
-      },
-      "resources": [],
-      "shortDescription": "",
-      "targets": "all",
       "windows": {
-        "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": ""
+        "webviewInstallMode": {
+          "silent": true,
+          "type": "offlineInstaller"
+        }
       }
-    },
-    "security": {
-      "csp": null
-    },
-    "updater": {
-      "active": false
-    },
-    "windows": [
-      {
-        "fullscreen": false,
-        "height": 600,
-        "resizable": true,
-        "title": "Capture Card Viewer",
-        "width": 800
-      }
-    ]
+    }
   }
 }
