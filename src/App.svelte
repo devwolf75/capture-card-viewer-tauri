@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { appWindow } from "@tauri-apps/api/window";
+  import { getCurrentWindow } from "@tauri-apps/api/window";
 
   let videoValue = "null";
   let audioValue = "null";
@@ -102,9 +102,9 @@
     if (!document.fullscreenElement && videoValue !== "null") {
       videoElement.requestFullscreen();
       videoElement.removeAttribute("controls");
-      appWindow.setFullscreen(true);
+      getCurrentWindow().setFullscreen(true);
     } else if (document.exitFullscreen) {
-      appWindow.setFullscreen(false);
+      getCurrentWindow().setFullscreen(false);
       document.exitFullscreen();
     } else {
       console.error("Fullscreen API is not supported");

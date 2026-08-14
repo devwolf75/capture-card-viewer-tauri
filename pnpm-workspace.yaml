@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+  svelte-preprocess: true
+onlyBuiltDependencies:
+  - esbuild
+  - svelte-preprocess
