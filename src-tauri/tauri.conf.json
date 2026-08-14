@@ -1,18 +1,15 @@
 {
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "capture-card-viewer",
+  "version": "1.1.0",
+  "identifier": "com.devwolf75.capturecardviewer",
   "build": {
     "beforeDevCommand": "pnpm dev",
     "beforeBuildCommand": "pnpm build",
-    "devPath": "http://localhost:1420",
-    "distDir": "../dist"
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
   },
-  "package": {
-    "productName": "capture-card-viewer",
-    "version": "1.1.0"
-  },
-  "tauri": {
-    "allowlist": {
-      "all": true
-    },
+  "app": {
     "windows": [
       {
         "title": "Capture Card Viewer",
@@ -24,23 +21,22 @@
     ],
     "security": {
       "csp": null
-    },
-    "bundle": {
-      "active": true,
-      "targets": "all",
-      "identifier": "com.devwolf75.capturecardviewer",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ],
-      "windows": {
-        "webviewInstallMode": {
-          "silent": true,
-          "type": "offlineInstaller"
-        }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "silent": true,
+        "type": "offlineInstaller"
       }
     }
   }
